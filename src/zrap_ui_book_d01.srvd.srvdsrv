@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for Booking'
+define service ZRAP_UI_BOOK_D01 {
+  expose ZRAP_I_BOOK_D01 as Books;
+}

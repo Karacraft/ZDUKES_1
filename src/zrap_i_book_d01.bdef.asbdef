@@ -1,0 +1,17 @@
+managed ; // implementation in class zbp_rap_i_book_d01 unique;
+//strict ( 2 );
+
+define behavior for ZRAP_I_BOOK_D01 //alias <alias_name>
+persistent table zrap_book_d01
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+}
+
+// we do not need a class, so edit the definition as below.
+// Note that you need to have same field names as table in CDS Entity.
+// If the names are changed using AS, creating a class becomes mandatory.
