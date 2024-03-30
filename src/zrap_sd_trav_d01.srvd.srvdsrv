@@ -1,0 +1,7 @@
+@EndUserText.label: 'Travel Application'
+define service ZRAP_SD_TRAV_D01 {
+  expose ZRAP_C_TRAV_D01    as Travel;
+  expose ZRAP_C_BOOKING_D01 as Booking;
+  expose I_Currency         as Currency;
+  expose I_Country          as Country;
+}
