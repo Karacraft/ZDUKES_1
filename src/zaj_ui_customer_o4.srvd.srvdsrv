@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZAJ_C_CUSTOMER'
+define service ZAJ_UI_CUSTOMER_O4 {
+  expose ZAJ_C_CUSTOMER as Customer;
+}

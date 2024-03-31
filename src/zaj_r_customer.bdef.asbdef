@@ -1,0 +1,54 @@
+managed implementation in class ZBP_R_CUSTOMER unique;
+strict ( 2 );
+with draft;
+define behavior for ZAJ_R_CUSTOMER alias Customer
+persistent table zaj_a_customer
+draft table ZAJ_D_CUSTOMER
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   CustomerID;
+
+  field ( readonly )
+   LocalCreatedAt,
+   LocalCreatedBy,
+   LastChangedAt,
+   LocalLastChangedAt,
+   LocalLastChangedBy;
+
+  field ( readonly : update )
+   CustomerID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAJ_A_CUSTOMER
+  {
+    CustomerID = customer_id;
+    FirstName = first_name;
+    LastName = last_name;
+    Title = title;
+    Street = street;
+    PostalCode = postal_code;
+    City = city;
+    CountryCode = country_code;
+    PhoneNumber = phone_number;
+    EmailAddress = email_address;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

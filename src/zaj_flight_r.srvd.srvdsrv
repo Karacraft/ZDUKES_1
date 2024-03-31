@@ -1,0 +1,4 @@
+@EndUserText.label: 'Read Only - E2E : SD for Mapping Flight'
+define service ZAJ_FLIGHT_R {
+  expose ZAJ_I_Connection_R as Connection;
+}
